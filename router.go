@@ -43,6 +43,11 @@ var (
 		"GetControllerAndAction"}
 )
 
+// For app of instances,Append Controller's methods shouldn't reflect to AutoRouter
+func ExceptMethodAppend(action string) {
+	exceptMethod = append(exceptMethod, action)
+}
+
 type controllerInfo struct {
 	pattern        string
 	regex          *regexp.Regexp
